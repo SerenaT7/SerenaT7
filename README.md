@@ -2,7 +2,7 @@
 
 <h2>👨‍💻 Cybersecurity Project(s):</h2>
 
-- <b>Data Azure Honeynet SOC Environment </b>
+- <b>Azure Honeynet SOC Environment </b>
   - https://github.com/SerenaT7/Azure-Honeynet
 
 
