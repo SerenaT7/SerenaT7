@@ -4,11 +4,3 @@
 
 - <b>Azure Honeynet SOC Environment </b>
   - https://github.com/SerenaT7/Azure-Honeynet
-
-
-
-
-
-
-
-
