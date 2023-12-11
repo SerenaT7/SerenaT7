@@ -1,4 +1,4 @@
-<h1>Hi, I'm Serena! <br/><a href="https://github.com/SerenaT7">Programmer</a>, <a href="https://www.linkedin.com/in/serena-tiller-10a269232/">Cybersecurity Professional</a></a></h1>
+<h1>Hi, I'm Serena!  <a href="https://www.linkedin.com/in/serena-tiller-10a269232/">Cybersecurity Professional</a></a></h1>
 
 <h2>👨‍💻 Cybersecurity Project(s):</h2>
 
