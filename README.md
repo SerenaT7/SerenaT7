@@ -1,105 +1,54 @@
-### Building a Secure SOC + Honeynet in Azure (Live Traffic)
+<h1>Hi, I'm Josh! <br/><a href="https://github.com/joshmadakor1">Programmer</a>, <a href="https://www.linkedin.com/in/joshmadakor/">Cybersecurity Professional</a>, <a href="https://www.youtube.com/c/joshmadakor">YouTuber</a></h1>
 
-#### Cloud Honeynet / SOC
+<h2>👨‍💻 Software Development Projects:</h2>
 
-![Intro](https://i.imgur.com/oGdBeu9.png)
+- <b>Data Structures and Algorithms Practice (AlgoExpert)</b>
+  - [Praciting DS & Algos in Python](https://github.com/joshmadakor1/Algorithms-Practice)
+- <b>Full Stack Web App (React, NodeJS, Azure, and Machine Learning Components)</b>
+  - [Image Analysis Middleware](https://github.com/joshmadakor1/4chan-Image-Analysis-Middleware-C964) <b><i>(Potentially NSFW)</b></i>
+- <b>PowerShell</b>
+  - [Windows EventLog: Failed RDP Logins Source IP to full GeoData Conversion](https://github.com/joshmadakor1/Sentinel-Lab)
+  - [JWipe (Disk Wiping Utility)](https://github.com/joshmadakor1/Jwipe.PowerShell)
+  - [Active Directory Bulk User Creation](https://github.com/joshmadakor1/AD_PS)
+  - [FIM (File Integrity Monitor)](https://github.com/joshmadakor1/PowerShell-Integrity-FIM)
+- <b>C# (.NET Desktop Applications)</b>
+  - [Ransomware Proof of Concept (Encrypter)](https://github.com/joshmadakor1/EncrypterPOC)
+  - [Ransomware Proof of Concept (Decrypter)](https://github.com/joshmadakor1/DecrypterPOC)
+  - [Keylogger with Email Capability](https://github.com/joshmadakor1/Key-Logger-With-Email)
+- <b>Python</b>
+  - [Package Delivery Application (Datastructures and Algorithms Demo)](https://github.com/joshmadakor1/Package-Delivery-Pathfinding-Algorithm)
 
-#### Introduction
+<h2>📺 Popular YouTube Videos</h2>
 
-In this project, I've implemented a mini honeynet in Azure and integrated log sources into a Log Analytics workspace. Microsoft Sentinel is utilized to build attack maps, trigger alerts, and create incidents. The project involves measuring security metrics in an insecure environment for 24 hours, applying security controls, measuring metrics for another 24 hours, and presenting the results.
+- [How to get into Cybersecurity Starting From Zero](https://www.youtube.com/watch?v=a83ASGn_V_s)
+- [A Day in the Life of a Cybersecurity Anayst](https://www.youtube.com/watch?v=uHy3oM7NnoU)
+- [How to Create a KeyLogger (C#)](https://www.youtube.com/watch?v=N-L9hklSlNk)
+- [Ransomware Demonstration (C#)](https://www.youtube.com/watch?v=OfvdQeh79s0)
+- [Is WGU Legit?](https://www.youtube.com/watch?v=E2MwRWxDBkA)
 
-#### Architecture Before Hardening / Security Controls
+<h2> 🤳 Connect with me:</h2>
 
-##### Architecture Diagram
+[<img align="left" alt="JoshMadakor | YouTube" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg" />][youtube]
+[<img align="left" alt="JoshMadakor | Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />][twitter]
+[<img align="left" alt="JoshMadakor | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
+[<img align="left" alt="JoshMadakor | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />][instagram]
 
-![ArchBefore](https://i.imgur.com/hcXZtQT.png)
+[twitter]: https://twitter.com/joshmadakor
+[youtube]: https://www.youtube.com/c/joshmadakor
+[instagram]: https://www.instagram.com/joshmadakor/
+[linkedin]: https://linkedin.com/in/joshmadakor
 
-#### Architecture After Hardening / Security Controls
+<!--
+**joshmadakor1/joshmadakor1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-##### Architecture Diagram
+Here are some ideas to get you started:
 
-![ArchAfter](https://i.imgur.com/HxWLNTZ.png)
-
-The architecture includes:
-
-- Virtual Network (VNet)
-- Network Security Group (NSG)
-- Virtual Machines (2 Windows, 1 Linux)
-- Log Analytics Workspace
-- Azure Key Vault
-- Azure Storage Account
-- Microsoft Sentinel
-
-For the "BEFORE" metrics, all resources were initially deployed and exposed to the internet. After applying security controls, Network Security Groups were hardened, and resources were protected by built-in firewalls and Private Endpoints.
-
-##### Attack Maps Before Hardening / Security Controls
-
-- NSG Allowed Inbound Malicious Flows
-- Linux Syslog Auth Failures
-- Windows RDP/SMB Auth Failures
-
-#### Metrics Before Hardening / Security Controls
-
-| Metric                      | Count  |
-|-----------------------------|--------|
-| SecurityEvent               | 32458  |
-| Syslog                      | 4515   |
-| SecurityAlert               | 4      |
-| SecurityIncident            | 109    |
-| AzureNetworkAnalytics_CL    | 2375   |
-
-#### Attack Maps Before Hardening / Security Controls
-
-All map queries returned no results due to no instances of malicious activity for the 24-hour period after hardening.
-
-![NSGBefore](https://i.imgur.com/EnPjan6.png)
-
-![Syslog](https://i.imgur.com/Q8mpmt6.png)
-
-![RDP](https://i.imgur.com/SnYo5Hp.png)
-
-
-
-#### Metrics After Hardening / Security Controls
-
-| Metric                      | Count  |
-|-----------------------------|--------|
-| SecurityEvent               | 10198  |
-| Syslog                      | 11     |
-| SecurityAlert               | 0      |
-| SecurityIncident            | 0      |
-| AzureNetworkAnalytics_CL    | 10     |
-
-#### GeoIP Information for Attacks
-
-##### GeoIP for NSG Allowed Inbound Malicious Flows
-
-![GeoIPNSG](https://imgur.com/XiMzRLy.png)
-
-##### GeoIP for Linux Syslog Auth Failures
-
-![GeoIPSyslog](https://imgur.com/MxG050m.png)
-
-##### GeoIP for Windows RDP/SMB Auth Failures
-
-![GeoIPRDP/SMB](https://imgur.com/MUSKMe0.png)
-
-#### Conclusion
-
-In this project, a mini honeynet was built in Microsoft Azure, log sources were integrated into a Log Analytics workspace, and Microsoft Sentinel was employed for alerting and incident response. The implementation of security controls led to a significant reduction in security events and incidents, showcasing the effectiveness of the measures.
-
-It's important to note that if the resources were heavily utilized by regular users, more security events and alerts might have been generated within the 24-hour period following the implementation of security controls.
-
-### Results
-
-**Change after securing environment:**
-
-| Metric                              | Change               |
-|-------------------------------------|----------------------|
-| Security Events (Windows VMs)       | -68.58%              |
-| Syslog (Linux VMs)                  | -99.76%              |
-| SecurityAlert (Defender for Cloud)   | -100.00%             |
-| Security Incident (Sentinel)        | -100.00%             |
-| NSG Inbound Malicious Flows Allowed | -99.58%              |
-
-
+- 🔭 I’m currently working on ...
+- 🌱 I’m currently learning ...
+- 👯 I’m looking to collaborate on ...
+- 🤔 I’m looking for help with ...
+- 💬 Ask me about ...
+- 📫 How to reach me: ...
+- 😄 Pronouns: ...
+- ⚡ Fun fact: ...
+-->
