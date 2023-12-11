@@ -2,5 +2,5 @@
 
 <h2>👨‍💻 Cybersecurity Projects:</h2>
 
-- <b>Azure Honeynet SOC Environment </b>
+- <b>Azure / Cloud Project </b>
 - [Creating a Live SOC/Honeynet in Azure](https://github.com/SerenaT7/Azure-Honeynet)
